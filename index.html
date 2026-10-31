@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasyawebdev — Premium Interactive Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700;800;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- File CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Overlay Latar Belakang Dynamic Island -->
+  <div class="page-overlay" id="page-overlay"></div>
+
+  <!-- HEADER: DYNAMIC ISLAND NAVIGATION -->
+  <header class="site-header">
+    <div class="dynamic-island" id="dynamic-island" role="button" aria-expanded="false" tabindex="0">
+      
+      <!-- Mode Compact / Standby -->
+      <div class="island-compact">
+        <div class="compact-left">
+          <span class="status-dot"></span>
+          <span class="brand-name">Menu</span>
+        </div>
+        <div class="compact-right">
+          <span class="menu-icon"><i class="fa-solid fa-bars"></i></span>
+        </div>
+      </div>
+
+      <!-- Mode Expanded (Navigasi Menu) -->
+      <div class="island-expanded">
+        <nav>
+          <ul class="nav-links-expanded">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#id-card-section">ID Card</a></li>
+            <li><a href="#why-me">Keunggulan</a></li>
+            <li><a href="#video-demo">Demo Video</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#projek-bento">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+          </ul>
+        </nav>
+        <a href="https://wa.me/62895320591040" target="_blank" rel="noopener" class="btn-cta magnetic">Hubungi Saya</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO POSTER SECTION -->
+  <section id="beranda" class="hero-poster">
+    <div class="top-titles" id="parallax-titles">
+      <h1 class="title">KREATIF</h1>
+      <h1 class="title">DIGITAL</h1>
+    </div>
+
+    <div class="product-wrapper">
+      <img src="pp.webp" alt="Rasya Web Dev" class="product-image magnetic">
+    </div>
+
+    <div class="left-content">
+      <p class="description auto-type typing-cursor" data-text="SOLUSI DIGITAL YANG BISA BIKIN BISNISMU MAKIN MENGUDARA."></p>
+      <div class="cta-callout magnetic">
+        <h2>HIRE ME<br>NOW</h2>
+      </div>
+      <div class="feature-tag reveal">
+        <p>PREMIUM<br>QUALITY</p>
+      </div>
+    </div>
+
+    <div class="right-content reveal">
+      <div class="star-burst">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 0 L60 20 L80 15 L75 35 L95 40 L85 55 L95 70 L75 75 L80 95 L60 90 L50 100 L40 90 L20 95 L25 75 L5 70 L15 55 L5 40 L25 35 L20 15 L40 20 Z" fill="#00704a"/>
+        </svg>
+      </div>
+      <div class="price-and-tagline">
+        <h2 class="price magnetic">2026</h2>
+        <p class="tagline">TINGKATKAN PERFORMA WEBSITEMU DENGAN DESAIN MODERN!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ID CARD SECTION -->
+  <section id="id-card-section" class="id-card-section reveal">
+    <div class="lanyard-wrapper">
+      
+      <!-- Tali Lanyard Atas -->
+      <div class="lanyard-strap">
+        <div class="lanyard-pin"></div>
+      </div>
+      
+      <!-- Pengait Metal / Hook -->
+      <div class="metal-hook">
+        <div class="hook-ring"></div>
+        <div class="hook-clip"></div>
+      </div>
+
+      <!-- Kartu ID Utama -->
+      <div class="id-card magnetic">
+        <!-- Lubang Kartu -->
+        <div class="card-hole"></div>
+
+        <!-- Header Profesi -->
+        <div class="card-header">
+          <span class="sub-role">Seorang Mahasiswa</span>
+          <h2 class="main-role">web dev &amp;<br>designer.</h2>
+        </div>
+
+        <!-- Body Kartu: Ikon Sosial Samping & Foto Profil -->
+        <div class="card-body">
+          <div class="side-icons">
+            <a href="https://github.com/rasyawebdev" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/62895320591040" target="_blank" rel="noopener" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com/r.mhmmdrsyaa" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/rasyawebdev" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+
+          <div class="photo-container">
+            <img src="pp.webp" alt="Foto Profil Rasya Web Dev">
+          </div>
+        </div>
+
+        <!-- Detail Nama, Jabatan & Alamat -->
+        <div class="card-footer">
+          <h3 class="user-name">Muhammad Rasya</h3>
+          <p class="user-title">Director of Web Art</p>
+          <p class="user-address"><i class="fa-solid fa-location-dot"></i> Kabupaten Bogor, Jawa Barat, Indonesia</p>
+        </div>
+
+        <!-- SEKSI PERKENALAN / SIAPA AKU -->
+        <div class="card-about">
+          <span class="about-label">Siapa Aku?</span>
+          <p class="about-text">
+            Halo! Saya seorang Web Developer &amp; Designer yang berfokus menciptakan pengalaman web modern, interaktif, dan responsif dengan estetika visual tinggi.
+          </p>
+        </div>
+
+        <!-- Barcode & Quotation Bawah -->
+        <div class="card-bottom">
+          <div class="barcode">
+            <span>||| | |||| | ||| |||| | |||</span>
+          </div>
+          <div class="quote-text">
+            Design is intelligence<br>made visible.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: WHY RASYAWEBDEV -->
+  <section class="why-section reveal" id="why-me">
+    <div class="why-container">
+      
+      <!-- Header Section -->
+      <div class="why-header">
+        <span class="why-badge">Keunggulan Jasa</span>
+        <h2 class="why-title">Mengapa Harus <span class="highlight">rasyawebdev</span>?</h2>
+        <p class="why-subtitle">Solusi pembuatan website &amp; web app modern dengan standar kodingan bersih, performa tinggi, dan visual masa kini.</p>
+      </div>
+
+      <!-- Bento Grid Keunggulan -->
+      <div class="why-grid">
+        
+        <!-- Kartu 1: Clean Code (Wide Card) -->
+        <div class="why-card why-wide">
+          <div class="why-card-header">
+            <div class="why-icon"><i class="fas fa-code"></i></div>
+            <span class="card-tag">Struktur Terjamin</span>
+          </div>
+          <div class="why-card-body">
+            <h3 class="card-title">Kodingan Rapih &amp; Clean Code</h3>
+            <p class="card-desc">Setiap baris kode ditulis dengan terstruktur, rapi, dan efisien. Website kamu tidak cuma bagus dari luar, tapi juga ringan, mudah di-maintain, dan gampang dikembangkan di masa depan.</p>
+          </div>
+        </div>
+
+        <!-- Kartu 2: Design Friendly & Aesthetic -->
+        <div class="why-card">
+          <div class="why-card-header">
+            <div class="why-icon"><i class="fas fa-paint-brush"></i></div>
+            <span class="card-tag">UI / UX Design</span>
+          </div>
+          <div class="why-card-body">
+            <h3 class="card-title">Simpel, Estetik &amp; Modern</h3>
+            <p class="card-desc">Fokus pada tampilan yang <em>user-friendly</em>, bersih, serta mengikuti tren desain masa kini dan masa depan. Bikin pengunjung betah berlama-lama.</p>
+          </div>
+        </div>
+
+        <!-- Kartu 3: High Performance -->
+        <div class="why-card">
+          <div class="why-card-header">
+            <div class="why-icon"><i class="fas fa-bolt"></i></div>
+            <span class="card-tag">Kecepatan Maksimal</span>
+          </div>
+          <div class="why-card-body">
+            <h3 class="card-title">Performa Super Kencang</h3>
+            <p class="card-desc">Website dioptimasi agar proses <em>loading</em> cepat di berbagai perangkat, responsif di HP/Desktop, dan siap memberikan pengalaman terbaik untuk pengunjung.</p>
+          </div>
+        </div>
+
+        <!-- Kartu 4: Web-Based App (Wide Feature) -->
+        <div class="why-card why-wide why-highlight-card">
+          <div class="why-card-header">
+            <div class="why-icon highlight-icon"><i class="fas fa-cubes"></i></div>
+            <span class="card-tag gold-tag">Fitur Kompleks</span>
+          </div>
+          <div class="why-card-body">
+            <h3 class="card-title">Bisa Bikin Web Application Juga!</h3>
+            <p class="card-desc">Bukan cuma website company profile atau landing page biasa, saya juga sanggup membangun <strong>Aplikasi Berbasis Web (Web App)</strong> interaktif sesuai sistem dan kebutuhan bisnis kamu.</p>
+            
+            <!-- Chip Contoh Web App -->
+            <div class="webapp-tags">
+              <span class="tag-title">Contoh yang bisa dibuat:</span>
+              <div class="tag-list">
+                <span class="app-chip"><i class="fas fa-chart-line"></i> Dashboard Admin</span>
+                <span class="app-chip"><i class="fas fa-cash-register"></i> Kasir / POS Online</span>
+                <span class="app-chip"><i class="fas fa-calendar-check"></i> Sistem Booking</span>
+                <span class="app-chip"><i class="fas fa-user-lock"></i> Web Portal Member</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- Penutup .why-grid -->
+
+      <!-- FAQ SECTION -->
+      <div class="webapp-faq-wrapper">
+        <div class="faq-header">
+          <span class="faq-badge"><i class="fas fa-question-circle"></i> Tanya Jawab</span>
+          <h3 class="faq-title">Pahami Lebih Dalam Mengenai Web App</h3>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>Apa itu Web Application (Web App)?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </summary>
+            <div class="faq-answer">
+              <p><strong>Web App</strong> adalah program interaktif yang diakses langsung via browser (Chrome, Safari, dll.) tanpa perlu di-download dari Play Store/App Store. Berbeda dari website biasa yang hanya menampilkan informasi, Web App punya sistem internal yang memproses data interaktif seperti kasir online, dashboard admin, hingga sistem booking.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Apa bedanya Web App dengan Aplikasi Mobile (Android/iOS)?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </summary>
+            <div class="faq-answer">
+              <p>Perbedaan utamanya ada pada <strong>aksesibilitas, efisiensi biaya, dan penyimpanan</strong>:</p>
+              <ul class="faq-list">
+                <li><strong>Kemudahan Akses:</strong> Web App bisa langsung dibuka dari HP/Laptop via link tanpa perlu install. Aplikasi mobile wajib di-download dulu.</li>
+                <li><strong>Efisiensi Biaya:</strong> Satu Web App langsung cocok untuk semua perangkat (Android, iOS, PC). Aplikasi mobile butuh pembuatan terpisah untuk Android &amp; iOS.</li>
+                <li><strong>Hemat Memori:</strong> Web App tidak memakan ruang penyimpanan (RAM/Internal) di HP pelanggan.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Apakah Web App nyaman dibuka di layar HP?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </summary>
+            <div class="faq-answer">
+              <p>Sangat nyaman! Di <strong>rasyawebdev</strong>, semua Web App dirancang dengan standar <em>Responsive &amp; Mobile-First Design</em>. Tampilan dan fiturnya otomatis menyesuaikan layar HP sehingga terasa mulus dan simpel layaknya aplikasi biasa.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Kapan bisnis saya butuh Web App dibanding Website Biasa?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </summary>
+            <div class="faq-answer">
+              <p>Kamu butuh Web App saat bisnis butuh <strong>otomatisasi data &amp; sistem interaktif</strong>, seperti:</p>
+              <ul class="faq-list">
+                <li>Mencatat transaksi penjualan dan stok barang secara otomatis.</li>
+                <li>Menerima sistem reservasi / janji temu langsung dari klien.</li>
+                <li>Menyediakan portal login khusus member, siswa, atau karyawan.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+
+    </div> <!-- Penutup .why-container -->
+  </section>
+
+  <!-- LANDSCAPE IMAGE SLIDER SECTION -->
+  <section id="galeri" class="gallery-section reveal">
+    <h2 class="section-title">POTONGAN HASIL PROJEK🔥</h2>
+    <p class="section-subtitle">Bisa dilihat image antarmuka website dari berbagai proyek yang sudah saya buat</p>
+
+    <div class="slider-container" id="sliderContainer">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide">
+          <img src="kbs1.png" alt="Karya 1">
+          <div class="slide-caption">Project Creative Design 01</div>
+        </div>
+        <div class="slide">
+          <img src="kbs2.png" alt="Karya 2">
+          <div class="slide-caption">Project Creative Design 02</div>
+        </div>
+        <div class="slide">
+          <img src="s1.png" alt="Karya 3">
+          <div class="slide-caption">Abstract Digital Illustration</div>
+        </div>
+        <div class="slide">
+          <img src="s2.png" alt="Karya 4">
+          <div class="slide-caption">3D Render Artwork</div>
+        </div>
+        <div class="slide">
+          <img src="s3.png" alt="Karya 5">
+          <div class="slide-caption">Modern UI/UX Showcase</div>
+        </div>
+      </div>
+
+      <button class="nav-btn prev-btn" id="prevBtn" aria-label="Slide Sebelumnya">&#10094;</button>
+      <button class="nav-btn next-btn" id="nextBtn" aria-label="Slide Selanjutnya">&#10095;</button>
+      <div class="dots-container" id="dotsContainer"></div>
+    </div>
+  </section>
+
+  <!-- BENTO GRID PROYEK -->
+  <section id="projek-bento" class="bento-section reveal">
+    <h2 class="section-title">PROYEK PILIHAN</h2>
+    <p class="section-subtitle">Kumpulan karya unggulan dalam tata letak Bento Grid modern.</p>
+
+    <div class="bento-grid">
+      <div class="bento-card bento-wide magnetic">
+        <div class="bento-header">
+          <span class="bento-tag">Aplikasi berbasis web PMB</span>
+          <a href="../kalpataru/PMB-KAMPUS" target="_blank" rel="noopener" class="bento-link" aria-label="Lihat Detail">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <div class="bento-body">
+          <h3 class="bento-title">Aplikasi Berbasis Website Penerimaan Mahasiswa Baru</h3>
+          <p class="bento-desc">Pengembangan antarmuka aplikasi berbasis website penerimaan mahasiswa baru dengan performa tinggi, manajemen state modern, dan sistem pendaftaran interaktif yang ramah pengguna.</p>
+        </div>
+      </div>
+
+      <div class="bento-card magnetic">
+        <div class="bento-header">
+          <span class="bento-tag">UI/UX Design</span>
+          <a href="../kalpataru" target="_blank" rel="noopener" class="bento-link" aria-label="Lihat Detail">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <div class="bento-body">
+          <h3 class="bento-title">Website Kampus</h3>
+          <p class="bento-desc">Dengan desain berkarakter yang menonjolkan ciri khas utama klien.</p>
+        </div>
+      </div>
+
+      <div class="bento-card magnetic">
+        <div class="bento-header">
+          <span class="bento-tag">Mobile Concept</span>
+          <a href="https://github.com/rasyawebdev" target="_blank" rel="noopener" class="bento-link" aria-label="Lihat Detail">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <div class="bento-body">
+          <h3 class="bento-title">Fintech Banking App</h3>
+          <p class="bento-desc">Aplikasi keuangan mikro dengan fitur transfer instan, manajemen portofolio, dan enkripsi keamanan tinggi.</p>
+        </div>
+      </div>
+
+      <div class="bento-card bento-wide magnetic">
+        <div class="bento-header">
+          <span class="bento-tag">Branding &amp; Web</span>
+          <a href="https://github.com/rasyawebdev" target="_blank" rel="noopener" class="bento-link" aria-label="Lihat Detail">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+        <div class="bento-body">
+          <h3 class="bento-title">Digital Agency Landing Page</h3>
+          <p class="bento-desc">Landing page konversi tinggi dengan efek animasi interaktif, optimasi SEO menyeluruh, dan tingkat kecepatan akses yang optimal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-projects-wrapper">
+      <a href="https://github.com/rasyawebdev" target="_blank" rel="noopener" class="btn-more-projects magnetic">
+        <span>EKSPLORASI SEMUA PROYEK DI GITHUB</span>
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION: DEDICATED VIDEO SHOWCASE (STANDALONE) -->
+  <section class="video-showcase-section reveal" id="video-demo">
+    <div class="video-showcase-container">
+      
+      <!-- Header Section -->
+      <div class="showcase-header">
+        <span class="showcase-badge"><i class="fas fa-play-circle"></i> Video Interaktif</span>
+        <h2 class="showcase-title">Lihat Hasil Karya Secara Live</h2>
+        <p class="showcase-subtitle">Saksikan demonstrasi antarmuka, animasi, dan sistem interaktif buatan rasyawebdev.</p>
+      </div>
+
+      <!-- Wadah Video Standalone -->
+      <div class="video-player-card magnetic">
+        <div class="main-video-wrapper" id="videoFrame">
+          
+          <!-- Cover Gambar Pratinjau -->
+          <img src="kbs1.png" alt="Cover Video Showcase" class="video-poster">
+          
+          <!-- Tombol Play Besar di Tengah Frame -->
+          <div class="play-button-overlay" id="playTrigger" role="button" tabindex="0" aria-label="Putar video showcase">
+            <button class="pulse-play-btn" aria-label="Putar Video Showcase">
+              <i class="fas fa-play"></i>
+            </button>
+            <span class="play-btn-text">Klik Untuk Memutar Demo</span>
+          </div>
+
+          <!-- Iframe Player Video YouTube -->
+          <iframe id="mainYoutubePlayer" src="" title="Video Showcase Rasyawebdev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        </div>
+
+        <!-- Footer Wadah Video -->
+        <div class="video-card-footer">
+          <div class="footer-left">
+            <span class="status-dot"></span>
+            <span class="video-info-title">Interactive System Demo Showcase</span>
+          </div>
+          <span class="video-tag">Full HD 1080p</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION KONTAK -->
+  <section class="social-contact-section reveal" id="contact">
+    <div class="social-contact-container">
+      <div class="social-contact-header">
+        <span class="social-badge">Mari Terhubung</span>
+        <h2 class="social-title">Hubungi Saya Langsung</h2>
+        <p class="social-subtitle">Pilih platform favoritmu untuk mulai mengobrol atau melihat karya terbaru saya.</p>
+      </div>
+
+      <div class="social-grid">
+        <a href="https://wa.me/62895320591040" target="_blank" rel="noopener" class="social-card magnetic">
+          <div class="social-icon-wrapper brand-wa"><i class="fab fa-whatsapp"></i></div>
+          <div class="social-info">
+            <span class="platform-name">WhatsApp</span>
+            <span class="account-name">Rasyawebdev</span>
+          </div>
+          <div class="social-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <a href="https://instagram.com/rasyawebdev.id" target="_blank" rel="noopener" class="social-card magnetic">
+          <div class="social-icon-wrapper brand-ig"><i class="fab fa-instagram"></i></div>
+          <div class="social-info">
+            <span class="platform-name">Instagram</span>
+            <span class="account-name">@rasyawebdev.id</span>
+          </div>
+          <div class="social-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <a href="tel:+62895320591040" class="social-card magnetic">
+          <div class="social-icon-wrapper brand-phone"><i class="fas fa-phone-alt"></i></div>
+          <div class="social-info">
+            <span class="platform-name">No. Telepon</span>
+            <span class="account-name">+62 895-3205-9104-0</span>
+          </div>
+          <div class="social-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <a href="https://facebook.com/rasyawebdev" target="_blank" rel="noopener" class="social-card magnetic">
+          <div class="social-icon-wrapper brand-fb"><i class="fab fa-facebook-f"></i></div>
+          <div class="social-info">
+            <span class="platform-name">Facebook</span>
+            <span class="account-name">rasyawebdev.id</span>
+          </div>
+          <div class="social-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+
+        <a href="mailto:rasyawebdev.id@gmail.com" class="social-card magnetic">
+          <div class="social-icon-wrapper brand-email"><i class="fas fa-envelope"></i></div>
+          <div class="social-info">
+            <span class="platform-name">Email</span>
+            <span class="account-name">rasyawebdev.id@gmail.com</span>
+          </div>
+          <div class="social-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-cta reveal">
+        <span class="cta-subtitle">TERTARIK BEKERJA SAMA?</span>
+        <h2 class="cta-heading">MARI BUAT SESUATU YANG <span class="highlight-text">LUAR BIASA!</span></h2>
+        <a href="https://wa.me/62895320591040" class="btn-footer-cta magnetic" target="_blank" rel="noopener">
+          <span>HUBUNGI SAYA SEKARANG</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-content">
+        <div class="footer-col footer-brand">
+          <h3 class="footer-logo">RASYAWEBDEV</h3>
+          <p class="brand-desc">Menciptakan pengalaman web modern, interaktif, dan berkualitas tinggi dengan estetika visual unggulan untuk mengembangkan bisnis Anda.</p>
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Tersedia untuk Proyek Baru</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-title">NAVIGASI</h4>
+          <ul class="footer-links">
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#id-card-section">ID Card</a></li>
+            <li><a href="#why-me">Keunggulan</a></li>
+            <li><a href="#video-demo">Demo Video</a></li>
+            <li><a href="#galeri">Galeri Slider</a></li>
+            <li><a href="#projek-bento">Proyek Pilihan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-title">LAYANAN</h4>
+          <ul class="footer-links">
+            <li><a href="#why-me">Web Development</a></li>
+            <li><a href="#why-me">UI/UX Design</a></li>
+            <li><a href="#why-me">Landing Page Design</a></li>
+            <li><a href="#why-me">Web Application</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="col-title">HUBUNGI SAYA</h4>
+          <p class="contact-info"><i class="fa-solid fa-envelope"></i> rasyawebdev.id@gmail.com</p>
+          <p class="contact-info"><i class="fa-solid fa-location-dot"></i> Jawa Barat, Indonesia</p>
+          <div class="footer-socials">
+            <a href="https://github.com/rasyawebdev-hub" target="_blank" rel="noopener" aria-label="GitHub" class="magnetic"><i class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/62895320591040" target="_blank" rel="noopener" aria-label="WhatsApp" class="magnetic"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com/rasyawebdev.id" target="_blank" rel="noopener" aria-label="Instagram" class="magnetic"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com/rasyawebdev" target="_blank" rel="noopener" aria-label="Facebook" class="magnetic"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Rasyawebdev. All Rights Reserved.</p>
+        <p class="credit">Crafted with <i class="fa-solid fa-heart heart-icon"></i> &amp; Passion.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
