@@ -63,7 +63,7 @@
     </div>
 
     <div class="product-wrapper">
-      <img src="rasyaganteng.png" alt="Rasya Web Dev" class="product-image magnetic">
+      <img src="pp.webp" alt="Rasya Web Dev" class="product-image magnetic">
     </div>
 
     <div class="left-content">
@@ -125,7 +125,7 @@
           </div>
 
           <div class="photo-container">
-            <img src="rasyaganteng.png" alt="Foto Profil Rasya Web Dev">
+            <img src="pp.webp" alt="Foto Profil Rasya Web Dev">
           </div>
         </div>
 
@@ -337,7 +337,7 @@
     <p class="section-subtitle">Kumpulan karya unggulan dalam tata letak Bento Grid modern.</p>
 
     <div class="bento-grid">
-      <div class="bento-card bento-wide magneti">
+      <div class="bento-card bento-wide magnetic">
         <div class="bento-header">
           <span class="bento-tag">Aplikasi berbasis web PMB</span>
           <a href="../kalpataru/PMB-KAMPUS" target="_blank" rel="noopener" class="bento-link" aria-label="Lihat Detail">
@@ -417,7 +417,7 @@
           <img src="kbs1.png" alt="Cover Video Showcase" class="video-poster">
           
           <!-- Tombol Play Besar di Tengah Frame -->
-          <div class="play-button-overlay" id="playTrigger">
+          <div class="play-button-overlay" id="playTrigger" role="button" tabindex="0" aria-label="Putar video showcase">
             <button class="pulse-play-btn" aria-label="Putar Video Showcase">
               <i class="fas fa-play"></i>
             </button>
@@ -425,7 +425,7 @@
           </div>
 
           <!-- Iframe Player Video YouTube -->
-          <iframe id="mainYoutubePlayer" src="" title="Video Showcase Rasyawebdev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe id="mainYoutubePlayer" src="" title="Video Showcase Rasyawebdev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
         </div>
 
@@ -565,175 +565,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- JAVASCRIPT INTERAKTIF -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      
-      // 1. DYNAMIC ISLAND & OVERLAY INTERACTION
-      const island = document.getElementById('dynamic-island');
-      const overlay = document.getElementById('page-overlay');
-      
-      function toggleIsland() {
-        const isActive = island.classList.toggle('active');
-        overlay.classList.toggle('active');
-        island.setAttribute('aria-expanded', isActive);
-      }
-
-      function closeIsland() {
-        island.classList.remove('active');
-        overlay.classList.remove('active');
-        island.setAttribute('aria-expanded', 'false');
-      }
-
-      island.addEventListener('click', (e) => {
-        if (e.target.tagName !== 'A') {
-          toggleIsland();
-        } else {
-          setTimeout(closeIsland, 300);
-        }
-      });
-
-      document.addEventListener('click', (e) => {
-        if (!island.contains(e.target) && island.classList.contains('active')) {
-          closeIsland();
-        }
-      });
-
-      // 2. HERO PARALLAX SCROLL EFFECT
-      const titles = document.querySelectorAll('.title');
-      window.addEventListener('scroll', () => {
-        const scroll = window.scrollY;
-        if (scroll < window.innerHeight) {
-          if (titles[0]) titles[0].style.transform = `translateY(${scroll * 0.35}px)`;
-          if (titles[1]) titles[1].style.transform = `translateY(${scroll * 0.2}px)`;
-        }
-      });
-
-      // 3. MAGNETIC ELEMENTS EFFECT
-      const magnets = document.querySelectorAll('.magnetic');
-      magnets.forEach((magnet) => {
-        magnet.addEventListener('mousemove', function(e) {
-          const position = magnet.getBoundingClientRect();
-          const x = e.clientX - position.left - position.width / 2;
-          const y = e.clientY - position.top - position.height / 2;
-          magnet.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
-        });
-        magnet.addEventListener('mouseleave', function() {
-          magnet.style.transform = 'translate(0px, 0px) scale(1)';
-        });
-      });
-
-      // 4. SCROLL REVEAL (INTERSECTION OBSERVER)
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          }
-        });
-      }, { threshold: 0.15 });
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-      // 5. AUTO TYPING EFFECT
-      const typeTarget = document.querySelector('.auto-type');
-      if (typeTarget) {
-        const textToType = typeTarget.getAttribute('data-text') || '';
-        typeTarget.textContent = '';
-        let i = 0;
-        setTimeout(() => {
-          const typingInterval = setInterval(() => {
-            if (i < textToType.length) {
-              typeTarget.textContent += textToType.charAt(i);
-              i++;
-            } else {
-              clearInterval(typingInterval);
-              typeTarget.classList.remove('typing-cursor');
-            }
-          }, 60);
-        }, 1000);
-      }
-
-      // 6. LOGIKA LANDSCAPE IMAGE SLIDER
-      const track = document.getElementById("sliderTrack");
-      if (track) {
-        const slides = Array.from(track.children);
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        const dotsContainer = document.getElementById("dotsContainer");
-        const sliderContainer = document.getElementById("sliderContainer");
-
-        let currentIndex = 0;
-        let autoPlayTimer = null;
-        const autoPlayDelay = 4000;
-
-        slides.forEach((_, index) => {
-          const dot = document.createElement("div");
-          dot.classList.add("dot");
-          if (index === 0) dot.classList.add("active");
-          dot.addEventListener("click", () => goToSlide(index));
-          dotsContainer.appendChild(dot);
-        });
-
-        const dots = Array.from(dotsContainer.children);
-
-        function goToSlide(index) {
-          currentIndex = (index + slides.length) % slides.length;
-          track.style.transform = `translateX(-${currentIndex * 100}%)`;
-          dots.forEach((dot, idx) => {
-            dot.classList.toggle("active", idx === currentIndex);
-          });
-        }
-
-        nextBtn.addEventListener("click", () => {
-          goToSlide(currentIndex + 1);
-          resetAutoPlay();
-        });
-
-        prevBtn.addEventListener("click", () => {
-          goToSlide(currentIndex - 1);
-          resetAutoPlay();
-        });
-
-        function startAutoPlay() {
-          if (!autoPlayTimer) {
-            autoPlayTimer = setInterval(() => {
-              goToSlide(currentIndex + 1);
-            }, autoPlayDelay);
-          }
-        }
-
-        function stopAutoPlay() {
-          clearInterval(autoPlayTimer);
-          autoPlayTimer = null;
-        }
-
-        function resetAutoPlay() {
-          stopAutoPlay();
-          startAutoPlay();
-        }
-
-        sliderContainer.addEventListener("mouseenter", stopAutoPlay);
-        sliderContainer.addEventListener("mouseleave", startAutoPlay);
-        startAutoPlay();
-      }
-
-      // 7. LOGIKA PEMUTARAN VIDEO SHOWCASE STANDALONE
-      const playTrigger = document.getElementById('playTrigger');
-      const videoFrame = document.getElementById('videoFrame');
-      const mainYoutubePlayer = document.getElementById('mainYoutubePlayer');
-
-      // Masukkan ID Video YouTube kamu di sini (misal ID demo/portofolio kamu)
-      const youtubeVideoId = 'dQw4w9WgXcQ';
-
-      if (playTrigger && mainYoutubePlayer && videoFrame) {
-        playTrigger.addEventListener('click', () => {
-          mainYoutubePlayer.src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0`;
-          videoFrame.classList.add('is-playing');
-        });
-      }
-
-    });
-  </script>
-
+  <script src="script.js" defer></script>
 </body>
 </html>

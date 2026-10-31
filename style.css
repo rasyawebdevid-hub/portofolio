@@ -1812,240 +1812,602 @@ body {
   }
 }
 
-/* Mobile Devices (Max-width: 768px) */
+/* Pengaturan mobile digabungkan pada bagian MOBILE-FIRST REFINEMENT di bawah. */
+
+/* =========================================================
+   12. MOBILE-FIRST REFINEMENT
+   Ditambahkan tanpa mengubah tampilan desktop yang sudah ada.
+   ========================================================= */
+
+html {
+  width: 100%;
+  overflow-x: clip;
+  scroll-padding-top: 24px;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @media (max-width: 768px) {
-  .site-header {
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .dynamic-island {
-    width: 170px;
-    height: 42px;
-    padding: 8px 14px;
-  }
-
-  .dynamic-island.active {
-    width: calc(100vw - 40px);
-    max-width: 320px;
-    height: auto;
-    min-height: 250px;
-    padding: 20px 16px;
-    border-radius: 24px;
-  }
-
-  .hero-poster {
-    padding: 90px 20px 40px;
-    gap: 20px;
-  }
-
-  .title {
-    font-size: clamp(64px, 15vw, 120px);
-    letter-spacing: -1px;
-  }
-
-  .product-wrapper {
-    height: 260px;
-    margin: 10px 0;
-  }
-
-  .description,
-  .tagline {
-    font-size: 14px;
-  }
-
-  .cta-callout h2,
-  .feature-tag p {
-    font-size: 38px;
-  }
-
-  .price {
-    font-size: 64px;
-  }
-
-  .star-burst {
-    width: 80px;
-  }
-
-  .id-card-section {
-    padding: 40px 16px;
-  }
-
-  .lanyard-strap {
-    width: 20px;
-    height: 60px;
-  }
-
-  .id-card {
-    width: 100%;
-    max-width: 310px;
-    padding: 18px 16px;
-    border-radius: 16px;
-  }
-
-  .card-header .main-role {
-    font-size: 24px;
-  }
-
-  .photo-container {
-    height: 150px;
-  }
-
+  /* Spacing dan lebar konten */
   .why-section,
   .video-showcase-section,
   .gallery-section,
   .bento-section,
-  .social-contact-section {
-    margin: 40px auto 50px;
-    padding: 0 16px;
+  .social-contact-section,
+  .site-footer {
+    width: 100%;
+    max-width: 100%;
   }
 
+  .why-section,
+  .video-showcase-section {
+    margin-top: 52px;
+    margin-bottom: 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .gallery-section,
+  .bento-section,
+  .social-contact-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section-title,
   .why-title,
   .showcase-title,
-  .gallery-section .section-title,
-  .bento-section .section-title,
-  .social-title,
-  .cta-heading {
-    font-size: 32px;
+  .social-title {
+    overflow-wrap: anywhere;
   }
 
+  .section-subtitle,
   .why-subtitle,
   .showcase-subtitle,
-  .gallery-section .section-subtitle,
-  .bento-section .section-subtitle,
   .social-subtitle {
+    max-width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    line-height: 1.65;
+  }
+
+  /* Dynamic Island: tidak menutupi layar dan menu bisa di-scroll */
+  .site-header {
+    position: fixed;
+    right: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: auto;
+    z-index: 1000;
+  }
+
+  .dynamic-island {
+    width: 154px;
+    height: 44px;
+    min-height: 44px;
+    padding: 7px 14px;
+    border-radius: 24px;
+    transform: none;
+  }
+
+  .dynamic-island:hover {
+    transform: none;
+  }
+
+  .dynamic-island.active {
+    width: min(300px, calc(100vw - 28px));
+    max-width: 300px;
+    height: auto;
+    max-height: min(72dvh, 560px);
+    min-height: 0;
+    padding: 18px 16px;
+    border-radius: 22px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    justify-content: flex-start;
+  }
+
+  .dynamic-island.active .island-expanded {
+    display: flex;
+    height: auto;
+    min-height: 0;
+    opacity: 1;
+    transform: none;
+    gap: 12px;
+  }
+
+  .nav-links-expanded {
+    gap: 0;
+    margin: 0;
+  }
+
+  .nav-links-expanded li {
+    width: 100%;
+  }
+
+  .nav-links-expanded a {
+    display: block;
+    width: 100%;
+    padding: 10px 8px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .nav-links-expanded a:hover {
+    transform: none;
+  }
+
+  .btn-cta {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+  }
+
+  /* Hero: susunan vertikal, judul dan foto tidak saling menimpa */
+  .hero-poster {
+    min-height: 660px;
+    height: auto;
+    padding: 108px 16px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .top-titles {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    z-index: 1;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: clamp(58px, 15vw, 112px);
+    line-height: 0.82;
+    letter-spacing: -1px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .product-wrapper {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: min(82vw, 340px);
+    height: clamp(230px, 66vw, 320px);
+    margin: 12px auto 0;
+    animation: mobileFloat 5s ease-in-out infinite;
+  }
+
+  .product-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Pastikan foto berada tepat di tengah pada layar mobile */
+  .product-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: auto;
+    right: auto;
+    align-self: center;
+  }
+
+  .product-image {
+    object-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo-container img {
+    display: block;
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  @keyframes mobileFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .left-content,
+  .right-content {
+    width: 100%;
+    max-width: 420px;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    transform: none;
+  }
+
+  .description,
+  .tagline {
     font-size: 13px;
+    line-height: 1.45;
   }
 
-  .webapp-faq-wrapper {
-    margin-top: 24px;
-    padding: 20px 16px;
-    border-radius: 16px;
+  .cta-callout h2,
+  .feature-tag p {
+    font-size: clamp(30px, 9vw, 44px);
   }
 
-  .faq-title { font-size: 18px; }
-
-  .faq-question {
-    font-size: 13.5px;
-    padding: 12px 14px;
+  .price {
+    font-size: clamp(48px, 14vw, 68px);
   }
 
-  .faq-answer {
-    font-size: 12px;
-    padding: 0 14px 12px;
+  .star-burst {
+    width: 76px;
   }
 
-  .video-player-card {
-    padding: 10px;
+  /* ID card */
+  .id-card-section {
+    padding: 44px 16px;
+    overflow: hidden;
+  }
+
+  .lanyard-wrapper {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .id-card {
+    width: min(100%, 330px);
+    padding: 22px 18px 18px;
+  }
+
+  .photo-container {
+    height: clamp(150px, 48vw, 180px);
+  }
+
+  /* Keunggulan dan FAQ */
+  .why-grid,
+  .bento-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .why-wide,
+  .bento-wide {
+    grid-column: auto;
+  }
+
+  .why-card,
+  .bento-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 20px;
     border-radius: 18px;
   }
 
-  .pulse-play-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 16px;
+  .why-card:hover,
+  .id-card:hover {
+    transform: none;
   }
 
-  .play-btn-text { font-size: 9px; }
+  .card-title,
+  .bento-title {
+    overflow-wrap: anywhere;
+  }
 
-  /* Mencegah slider terlalu pipih di mobile */
-  .slider-container {
+  .webapp-faq-wrapper {
+    margin-top: 26px;
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .faq-title {
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .faq-question {
+    gap: 12px;
+    padding: 14px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .faq-answer {
+    padding-left: 14px;
+    padding-right: 14px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Video showcase */
+  .video-player-card {
+    padding: 9px;
+    border-radius: 18px;
+  }
+
+  .main-video-wrapper {
+    width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 10px;
+    border-radius: 12px;
+  }
+
+  .pulse-play-btn {
+    width: 54px;
+    height: 54px;
+    font-size: 18px;
+  }
+
+  .play-btn-text {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .video-card-footer {
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 12px 4px 3px;
+  }
+
+  .video-info-title {
+    font-size: 11px;
+  }
+
+  .video-tag {
+    font-size: 10px;
+  }
+
+  /* Galeri slider */
+  .slider-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    min-height: 210px;
+    max-height: 380px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .slider-track,
+  .slide {
+    height: 100%;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .slide-caption {
-    font-size: 0.85rem;
-    padding: 24px 14px 12px;
+    font-size: 12px;
+    line-height: 1.35;
+    padding: 28px 14px 12px;
   }
 
   .nav-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 12px;
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    font-size: 13px;
   }
 
   .prev-btn { left: 8px; }
   .next-btn { right: 8px; }
 
+  /* Kontak */
   .social-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
   }
 
   .social-card {
-    padding: 14px 16px;
-    border-radius: 14px;
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    gap: 12px;
   }
 
-  .social-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
-    border-radius: 10px;
+  .social-info {
+    min-width: 0;
   }
 
-  .account-name { font-size: 14px; }
-
-  .site-footer {
-    padding: 50px 16px 30px;
-  }
-
-  .footer-cta { margin-bottom: 40px; }
-
-  .btn-footer-cta {
-    padding: 12px 28px;
+  .account-name {
+    overflow-wrap: anywhere;
     font-size: 12px;
   }
 
-  .footer-divider { margin-bottom: 40px; }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    margin-bottom: 40px;
+  .social-icon-wrapper {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
   }
 
-  .footer-logo { font-size: 26px; }
+  /* Footer */
+  .site-footer {
+    padding: 48px 16px 24px;
+  }
+
+  .footer-cta {
+    margin-bottom: 34px;
+    text-align: center;
+  }
+
+  .cta-heading {
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+  }
+
+  .btn-footer-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 100%;
+    padding: 13px 18px;
+    font-size: 11px;
+  }
+
+  .footer-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    margin-bottom: 32px;
+  }
+
+  .footer-col {
+    min-width: 0;
+  }
+
+  .contact-info {
+    overflow-wrap: anywhere;
+  }
 
   .footer-bottom {
     flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 18px;
     text-align: center;
+    line-height: 1.5;
     font-size: 11px;
+  }
+
+  /* Hilangkan efek hover yang tidak cocok untuk layar sentuh */
+  .magnetic {
+    will-change: auto;
+  }
+
+  .page-overlay {
+    height: 100dvh;
   }
 }
 
-/* Compact Smartphones (Max-width: 480px) */
+/* Smartphone kecil */
 @media (max-width: 480px) {
-  .site-header {
-    bottom: 16px;
-    right: 16px;
+  .hero-poster {
+    min-height: 600px;
+    padding-top: 96px;
   }
 
-  .dynamic-island.active {
-    width: calc(100vw - 32px);
+  .title {
+    font-size: clamp(54px, 14.5vw, 76px);
   }
 
   .product-wrapper {
-    height: 220px;
+    width: min(86vw, 300px);
+    height: 240px;
   }
 
   .why-title,
   .showcase-title,
   .gallery-section .section-title,
   .bento-section .section-title,
-  .social-title,
-  .cta-heading {
-    font-size: 26px;
+  .social-title {
+    font-size: clamp(25px, 7.5vw, 32px);
+    line-height: 1.08;
+  }
+
+  .why-section,
+  .video-showcase-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .gallery-section,
+  .bento-section,
+  .social-contact-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .why-card,
+  .bento-card {
+    padding: 18px;
+  }
+
+  .webapp-faq-wrapper {
+    padding: 18px 13px;
+  }
+
+  .slider-container {
+    min-height: 190px;
   }
 
   .cta-callout h2,
   .feature-tag p {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .price {
+    font-size: 48px;
+  }
+}
+
+/* Layar sangat kecil */
+@media (max-width: 360px) {
+  .hero-poster {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .title {
     font-size: 52px;
+  }
+
+  .dynamic-island.active {
+    width: calc(100vw - 24px);
+  }
+
+  .id-card {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .faq-question {
+    font-size: 13px;
+  }
+
+  .video-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Hormati preferensi pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
