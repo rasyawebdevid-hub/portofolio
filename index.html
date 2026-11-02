@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Muhammad Rasya - Web Developer & Digital Creative. Membangun website modern, responsif, dan aplikasi berbasis web untuk kebutuhan bisnis.">
   <meta name="author" content="Muhammad Rasya">
-  <title>Muhammad Rasya — Web Developer & Digital Creative</title>
+  <title>Muhammad Rasya — Web Developer &amp; Digital Creative</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- CSS -->
+  <!-- CSS Custom -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -183,9 +183,15 @@
         <div class="why-grid">
 
           <!-- CARD 1 -->
-          <div class="why-card why-wide">
+          <article class="why-card why-wide">
             <div class="why-card-header">
-              <div class="why-icon"><i class="fas fa-code"></i></div>
+              <!-- Logo Stack Bahasa Pemrograman Berwarna -->
+              <div class="why-icon icon-webdev" aria-hidden="true">
+                <i class="fa-brands fa-html5 text-orange"></i>
+                <i class="fa-brands fa-css3-alt text-blue"></i>
+                <i class="fa-brands fa-js text-yellow"></i>
+                <i class="fa-brands fa-php text-purple"></i>
+              </div>
               <span class="card-tag">Web Development</span>
             </div>
 
@@ -195,12 +201,15 @@
                 Memiliki ketertarikan dalam membangun website menggunakan HTML, CSS, JavaScript, dan PHP. Berfokus pada struktur kode yang terorganisir, fungsi yang berjalan baik, serta kemudahan pengembangan.
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- CARD 2 -->
-          <div class="why-card">
+          <article class="why-card">
             <div class="why-card-header">
-              <div class="why-icon"><i class="fas fa-paint-brush"></i></div>
+              <!-- Logo UI/UX Figma Gradient -->
+              <div class="why-icon icon-design" aria-hidden="true">
+                <i class="fa-brands fa-figma"></i>
+              </div>
               <span class="card-tag">UI / UX Design</span>
             </div>
 
@@ -210,12 +219,15 @@
                 Menyukai desain antarmuka yang minimalis, estetik, dan mudah dipahami. Mengutamakan kenyamanan pengguna melalui tata letak dan pemilihan elemen visual yang tepat.
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- CARD 3 -->
-          <div class="why-card">
+          <article class="why-card">
             <div class="why-card-header">
-              <div class="why-icon"><i class="fas fa-database"></i></div>
+              <!-- Logo Server / Database Cyan Glow -->
+              <div class="why-icon icon-data" aria-hidden="true">
+                <i class="fa-solid fa-server"></i>
+              </div>
               <span class="card-tag">Data Management</span>
             </div>
 
@@ -225,12 +237,15 @@
                 Memiliki pengalaman dalam melakukan entri, pemeriksaan, validasi, dan pengarsipan data. Terbiasa bekerja secara teliti dan memperhatikan ketepatan informasi.
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- CARD 4 -->
-          <div class="why-card why-wide why-highlight-card">
+          <article class="why-card why-wide why-highlight-card">
             <div class="why-card-header">
-              <div class="why-icon highlight-icon"><i class="fas fa-cubes"></i></div>
+              <!-- Logo Layers / Web App Stack -->
+              <div class="why-icon icon-webapp" aria-hidden="true">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
               <span class="card-tag gold-tag">Web Application</span>
             </div>
 
@@ -246,15 +261,15 @@
                 <span class="tag-title">Bidang pengembangan yang saya pelajari:</span>
 
                 <div class="tag-list">
-                  <span class="app-chip"><i class="fas fa-chart-line"></i> Dashboard Admin</span>
-                  <span class="app-chip"><i class="fas fa-user-graduate"></i> Sistem Akademik</span>
-                  <span class="app-chip"><i class="fas fa-clipboard-list"></i> Sistem Pendaftaran</span>
-                  <span class="app-chip"><i class="fas fa-database"></i> Database Management</span>
+                  <span class="app-chip"><i class="fas fa-chart-line" aria-hidden="true"></i> Dashboard Admin</span>
+                  <span class="app-chip"><i class="fas fa-user-graduate" aria-hidden="true"></i> Sistem Akademik</span>
+                  <span class="app-chip"><i class="fas fa-clipboard-list" aria-hidden="true"></i> Sistem Pendaftaran</span>
+                  <span class="app-chip"><i class="fas fa-database" aria-hidden="true"></i> Database Management</span>
                 </div>
               </div>
 
             </div>
-          </div>
+          </article>
 
         </div>
 
@@ -268,10 +283,11 @@
 
           <div class="faq-accordion">
 
-            <details class="faq-item" open>
+            <!-- name="faq-group" memastikan pertanyaan lain nutup otomatis -->
+            <details class="faq-item" name="faq-group" open>
               <summary class="faq-question">
                 <span>Apa yang saya kerjakan?</span>
-                <i class="fas fa-chevron-down faq-icon"></i>
+                <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
               </summary>
 
               <div class="faq-answer">
@@ -281,10 +297,10 @@
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-item" name="faq-group">
               <summary class="faq-question">
                 <span>Apa teknologi yang saya gunakan?</span>
-                <i class="fas fa-chevron-down faq-icon"></i>
+                <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
               </summary>
 
               <div class="faq-answer">
@@ -303,10 +319,10 @@
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-item" name="faq-group">
               <summary class="faq-question">
                 <span>Bagaimana pendekatan saya dalam bekerja?</span>
-                <i class="fas fa-chevron-down faq-icon"></i>
+                <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
               </summary>
 
               <div class="faq-answer">
@@ -316,10 +332,10 @@
               </div>
             </details>
 
-            <details class="faq-item">
+            <details class="faq-item" name="faq-group">
               <summary class="faq-question">
                 <span>Apakah terbuka untuk kolaborasi?</span>
-                <i class="fas fa-chevron-down faq-icon"></i>
+                <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
               </summary>
 
               <div class="faq-answer">
@@ -349,27 +365,27 @@
         <div class="slider-track" id="sliderTrack">
 
           <div class="slide">
-            <img src="kbs1.png" alt="Website Kampus Tampilan 1">
+            <img src="kbs1.png" alt="Website Kampus - Tampilan Utama">
             <div class="slide-caption">Website Kampus - Homepage</div>
           </div>
 
           <div class="slide">
-            <img src="kbs2.png" alt="Website Kampus Tampilan 2">
+            <img src="kbs2.png" alt="Website Kampus - Tampilan Antarmuka">
             <div class="slide-caption">Website Kampus - Interface</div>
           </div>
 
           <div class="slide">
-            <img src="s1.png" alt="Desain Digital 1">
+            <img src="s1.png" alt="Desain Kreatif Digital">
             <div class="slide-caption">Creative Digital Design</div>
           </div>
 
           <div class="slide">
-            <img src="s2.png" alt="Desain Digital 2">
+            <img src="s2.png" alt="Karya Visual 3D">
             <div class="slide-caption">3D Visual Artwork</div>
           </div>
 
           <div class="slide">
-            <img src="s3.png" alt="Desain Antarmuka">
+            <img src="s3.png" alt="Desain UI UX Modern">
             <div class="slide-caption">Modern UI/UX Design</div>
           </div>
 
@@ -395,12 +411,12 @@
       <div class="bento-grid">
 
         <!-- PROYEK 1 -->
-        <div class="bento-card bento-wide magnetic">
+        <article class="bento-card bento-wide magnetic">
 
           <div class="bento-header">
             <span class="bento-tag">Web Application</span>
 
-            <a href="../kalpataru/PMB-KAMPUS" target="_blank" rel="noopener noreferrer" class="bento-link" aria-label="Lihat Proyek PMB">
+            <a href="../kalpataru/PMB-KAMPUS" target="_blank" rel="noopener noreferrer" class="bento-link" aria-label="Lihat Proyek PMB Kampus">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -413,10 +429,10 @@
             </p>
           </div>
 
-        </div>
+        </article>
 
         <!-- PROYEK 2 -->
-        <div class="bento-card magnetic">
+        <article class="bento-card magnetic">
 
           <div class="bento-header">
             <span class="bento-tag">Website Development</span>
@@ -434,15 +450,15 @@
             </p>
           </div>
 
-        </div>
+        </article>
 
         <!-- PROYEK 3 -->
-        <div class="bento-card magnetic">
+        <article class="bento-card magnetic">
 
           <div class="bento-header">
             <span class="bento-tag">UI/UX Exploration</span>
 
-            <a href="https://github.com/rasyawebdevid-hub" target="_blank" rel="noopener noreferrer" class="bento-link" aria-label="Lihat GitHub">
+            <a href="https://github.com/rasyawebdevid-hub" target="_blank" rel="noopener noreferrer" class="bento-link" aria-label="Lihat Eksplorasi UI/UX di GitHub">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -455,15 +471,15 @@
             </p>
           </div>
 
-        </div>
+        </article>
 
         <!-- PROYEK 4 -->
-        <div class="bento-card bento-wide magnetic">
+        <article class="bento-card bento-wide magnetic">
 
           <div class="bento-header">
             <span class="bento-tag">Creative Web Design</span>
 
-            <a href="https://github.com/rasyawebdevid-hub" target="_blank" rel="noopener noreferrer" class="bento-link" aria-label="Lihat GitHub">
+            <a href="https://github.com/rasyawebdevid-hub" target="_blank" rel="noopener noreferrer" class="bento-link" aria-label="Lihat Landing Page di GitHub">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -476,7 +492,7 @@
             </p>
           </div>
 
-        </div>
+        </article>
 
       </div>
 
@@ -516,7 +532,7 @@
 
             <div class="play-button-overlay" id="playTrigger" role="button" tabindex="0" aria-label="Putar video showcase">
 
-              <button class="pulse-play-btn" aria-label="Putar Video Showcase">
+              <button class="pulse-play-btn" type="button" aria-label="Putar Video Showcase">
                 <i class="fas fa-play"></i>
               </button>
 
@@ -526,9 +542,8 @@
 
             <iframe
               id="mainYoutubePlayer"
-              src=""
+              src="about:blank"
               title="Video Showcase Rasyawebdev"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>

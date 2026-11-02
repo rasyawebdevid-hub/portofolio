@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
@@ -92,13 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
           if (scroll < window.innerHeight) {
             if (titles[0]) {
-              titles[0].style.transform =
-                `translateY(${scroll * 0.35}px)`;
+              titles[0].style.transform = `translateY(${scroll * 0.35}px)`;
             }
 
             if (titles[1]) {
-              titles[1].style.transform =
-                `translateY(${scroll * 0.2}px)`;
+              titles[1].style.transform = `translateY(${scroll * 0.2}px)`;
             }
           }
 
@@ -174,8 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typeTarget = document.querySelector(".auto-type");
 
   if (typeTarget) {
-    const textToType =
-      typeTarget.getAttribute("data-text") || "";
+    const textToType = typeTarget.getAttribute("data-text") || "";
 
     if (prefersReducedMotion) {
       typeTarget.textContent = textToType;
@@ -184,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
       typeTarget.textContent = "";
 
       let index = 0;
-
       const typingDelay = 60;
 
       setTimeout(() => {
@@ -203,7 +198,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 6. LANDSCAPE IMAGE SLIDER
+  // 6. INTERACTIVE SKILLS TAB SYSTEM
+  // ==========================================
+
+  const skillTabs = document.querySelectorAll(".skill-tab");
+
+  if (skillTabs.length > 0) {
+    skillTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        // Matikan tab aktif sebelumnya
+        skillTabs.forEach((t) => {
+          t.classList.remove("active");
+          t.setAttribute("aria-selected", "false");
+        });
+
+        // Aktifkan tab yang diklik
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+      });
+    });
+  }
+
+
+  // ==========================================
+  // 7. LANDSCAPE IMAGE SLIDER (WITH TOUCH/SWIPE)
   // ==========================================
 
   const track = document.getElementById("sliderTrack");
@@ -219,7 +237,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slides.length > 0 && dotsContainer) {
       let currentIndex = 0;
       let autoPlayTimer = null;
-
       const autoPlayDelay = 4000;
 
       // Buat navigasi dots
@@ -251,8 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
       function goToSlide(index) {
         currentIndex = (index + slides.length) % slides.length;
 
-        track.style.transform =
-          `translateX(-${currentIndex * 100}%)`;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
         dots.forEach((dot, dotIndex) => {
           const active = dotIndex === currentIndex;
@@ -307,7 +323,39 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // Interaksi mouse dan keyboard
+      // Dukungan Gesture Swipe pada Perangkat Sentuh
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      track.addEventListener(
+        "touchstart",
+        (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          stopAutoPlay();
+        },
+        { passive: true }
+      );
+
+      track.addEventListener(
+        "touchend",
+        (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+          startAutoPlay();
+        },
+        { passive: true }
+      );
+
+      function handleSwipe() {
+        const swipeThreshold = 40;
+        if (touchStartX - touchEndX > swipeThreshold) {
+          goToSlide(currentIndex + 1);
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+          goToSlide(currentIndex - 1);
+        }
+      }
+
+      // Interaksi mouse & keyboard Focus
       if (sliderContainer) {
         sliderContainer.addEventListener("mouseenter", stopAutoPlay);
         sliderContainer.addEventListener("mouseleave", startAutoPlay);
@@ -315,7 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sliderContainer.addEventListener("focusout", startAutoPlay);
       }
 
-      // Hentikan ketika tab tidak aktif
+      // Hentikan ketika tab browser tidak aktif
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) {
           stopAutoPlay();
@@ -330,39 +378,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // ==========================================
-  // 7. YOUTUBE VIDEO SHOWCASE
+  // 8. YOUTUBE VIDEO SHOWCASE
   // ==========================================
 
   const playTrigger = document.getElementById("playTrigger");
   const videoFrame = document.getElementById("videoFrame");
   const mainYoutubePlayer = document.getElementById("mainYoutubePlayer");
 
-  // Ganti dengan ID video YouTube milikmu.
+  // ID Video YouTube
   const youtubeVideoId = "dQw4w9WgXcQ";
 
   if (playTrigger && mainYoutubePlayer && videoFrame) {
-    playTrigger.addEventListener("click", () => {
+    const startVideo = () => {
       if (videoFrame.classList.contains("is-playing")) return;
 
       mainYoutubePlayer.src =
         `https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&rel=0`;
 
       videoFrame.classList.add("is-playing");
+      playTrigger.setAttribute("aria-label", "Video sedang diputar");
+    };
 
-      playTrigger.setAttribute(
-        "aria-label",
-        "Video sedang diputar"
-      );
+    playTrigger.addEventListener("click", startVideo);
+
+    playTrigger.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        startVideo();
+      }
     });
   }
 
 
   // ==========================================
-  // 8. MOBILE TOUCH OPTIMIZATION
+  // 9. MOBILE TOUCH OPTIMIZATION
   // ==========================================
 
   if (isTouchDevice) {
     document.documentElement.classList.add("touch-device");
   }
-
 });
